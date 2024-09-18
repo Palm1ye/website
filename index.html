@@ -13,6 +13,60 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #070F2B, #1B1A55, #535C91);
+        }
+
+        h1, h2 {
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #spotifyCard {
+            background-color: rgba(35, 47, 62, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #spotifyCard:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        img {
+            transition: all 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #38bdf8;
+        }
+
+        #progressbar {
+            background-color: #38bdf8;
+        }
+
+        .icon:hover {
+            color: #38bdf8;
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -22,14 +76,14 @@
     <div class="container mx-auto px-4 py-8">
         <header class="text-center py-8">
             <img src="https://cdn.discordapp.com/avatars/307993889006944256/58847faced6b26d34f7f50d8a5e60290.png?size=1024"
-                alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4">
+                alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 hover:scale-110 transition-transform">
             <h1 class="text-5xl font-bold mb-4 animate-fadeIn">Hey, it's Palmiye!</h1>
-            <p class="text-lg text-gray-400 animate-fadeIn delay-200">There is nothing to see much</p>
+            <p class="text-lg text-light-400 animate-fadeIn delay-200">There is nothing to see much</p>
         </header>
 
         <main class="bg-gray-800 p-8 rounded-lg shadow-lg text-center max-w-lg mx-auto animate-slideIn">
             <h2 class="text-3xl font-semibold mb-6">Here what I'm doing right now</h2>
-            <div id="spotifyCard" class="flex flex-col bg-gray-700 bg-opacity-20 text-white mt-5 rounded-md p-4">
+            <div id="spotifyCard" class="flex flex-col bg-gray-700 bg-opacity-20 text-white mt-5 rounded-md p-4 hover:scale-105 transform transition-all duration-300 ease-in-out">
                 <div class="flex items-center gap-x-4">
                     <a id="linkToCover" target="_blank">
                         <img id="spotifyCover"
@@ -37,7 +91,7 @@
                             src="https://dummyimage.com/100x100/2b2b2b/0011ff.png&text=+" />
                     </a>
                     <div class="flex flex-col justify-center truncate">
-                        <span id="spotifySong" class="font-medium text-sm truncate"></span>
+                        <span id="spotifySong" class="flex font-medium text-sm truncate"></span>
                         <div class="-mt-1">
                             <span class="font-light text-sm">by</span>
                             <a id="spotifyArtist" target="_blank"
@@ -60,13 +114,13 @@
                 <p>If you cannot see anything, probably I'm doing nothing right now.</p>
             </div>
             <div class="flex justify-center mt-6 space-x-4">
-                <a href="https://www.linkedin.com/in/palmiye/" target="_blank" class="text-gray-400 hover:text-white transition duration-200">
+                <a href="https://www.linkedin.com/in/palmiye/" target="_blank" class="text-gray-400 hover:text-white transition duration-200 icon">
                     <i class="fa-brands fa-linkedin fa-2x"></i>
                 </a>
-                <a href="https://github.com/Palm1ye/" target="_blank" class="text-gray-400 hover:text-white transition duration-200">
+                <a href="https://github.com/Palm1ye/" target="_blank" class="text-gray-400 hover:text-white transition duration-200 icon">
                     <i class="fa-brands fa-github fa-2x"></i>
                 </a>
-                <a href="https://x.com/palm1ye" target="_blank" class="text-gray-400 hover:text-white transition duration-200">
+                <a href="https://x.com/palm1ye" target="_blank" class="text-gray-400 hover:text-white transition duration-200 icon">
                     <i class="fa-brands fa-x-twitter fa-2x"></i>
                 </a>
             </div>
@@ -74,7 +128,7 @@
     </div>
 
     <footer class="bg-gray-800 text-center py-4 mt-8">
-        <a href="https://github.com/Palm1ye/website" target="_blank">This website is open source.</a>
+        <a href="https://github.com/Palm1ye/website" target="_blank" class="hover:underline">This website is open source.</a>
     </footer>
 
     <script src="discord.js"></script>
